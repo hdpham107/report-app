@@ -23,3 +23,7 @@ export enum CardType {
   VN = 'VN',
   XE = 'XE',
 }
+
+export enum LeaderCardType {
+  TT = 'TT',
+}

@@ -1,6 +1,6 @@
-import { Card } from "./card";
+import { Member } from "./member";
 
 export interface Page {
     pageNo: number;
-    pageContent: Card[];
+    pageContent: Member[];
 }

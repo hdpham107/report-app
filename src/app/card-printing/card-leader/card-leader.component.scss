@@ -1,7 +1,126 @@
 .pageA4Portrait {
-    height: 297mm;
-    width: 210mm;
-    background-color: darkslateblue;
-  
-    
+  height: 297mm;
+  width: 210mm;
+  background: #59c173; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #5d26c1,
+    #a17fe0,
+    #59c173
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #5d26c1,
+    #a17fe0,
+    #59c173
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 10px;
+  margin: 0 auto;
+  border: 1px solid white;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  position: relative;
+
+  .card {
+    position: relative;
+    width: 66mm;
+    height: 90mm;
+
+    font-family: "Times New Roman", Times, serif;
+
+    &__img {
+      position: absolute;
+      width: 66mm;
+      height: 90mm;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      // padding-top: 5px;
+      // padding-left: 5px;
+    }
+
+    // &__code {
+    //   position: absolute;
+    //   top: 12%;
+    //   left: 25%;
+    //   z-index: 2;
+
+    //   color: black;
+    //   font-size: 13px;
+    // }
+
+    &__religiousName {
+      position: absolute;
+      bottom: 25%;
+      left: 20%;
+      z-index: 4;
+      color: #0cb2dc;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    &__fullName {
+      position: absolute;
+      bottom: 15%;
+      left: 25%;
+      z-index: 5;
+
+      color: #0cb2dc;
+      font-size: 16px;
+    }
+
+    &__avatar {
+      position: absolute;
+      top: 60px;
+      left: 50px;
+      height: 150px;
+      width: 150px;
+      z-index: 1;
+      border: 1px solid gray;
+    }
+
+    // &__wrapper {
+    //   height: 136px;
+    //   width: 136px;
+    //   border-radius: 20%;
+    //   border: 5px solid gray;
+    //   position: absolute;
+    //   z-index: 9;
+    //   left: 21%;
+    //   top: 21%;
+    //   transform: rotate(45deg);
+    // }
+
+    // &__organzationStucture {
+    //   position: absolute;
+    //   top: 89%;
+    //   left: 25%;
+    //   z-index: 3;
+
+    //   color: white;
+    //   font-size: 13px;
+    // }
   }
+
+  .no {
+    color: white;
+    position: absolute;
+    bottom: 5px;
+    right: 50%;
+    z-index: 10;
+    background-color: rgba(255, 0, 0, 0.4);
+    height: 20px;
+    width: 50px;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+@media print {
+  .no {
+    display: none;
+  }
+}

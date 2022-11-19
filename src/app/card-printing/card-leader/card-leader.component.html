@@ -1,3 +1,18 @@
-<div class="pageA4Portrait">
-    kho dọc
-</div>>
+<div class="pageA4Portrait" *ngFor="let page of pages">
+    <div class="card" *ngFor="let item of page.pageContent" [ngSwitch]="item.departmentCode">
+        <ng-container>
+          <img
+            *ngSwitchCase="enum.TT"
+            src="../assets/background-leader/TT.jpg"
+            class="card__img"
+          />
+        </ng-container>
+
+        <div class="card__wrapper">
+            <img src="{{ item.avatarPath }}" class="card__avatar" />
+        </div>
+        <h3 class="card__religiousName">{{ item.religiousName }}</h3>
+        <h4 class="card__fullName">{{ item.fullName }}</h4>
+      </div>
+      <div class="no">{{page.pageNo}}</div>
+</div>
