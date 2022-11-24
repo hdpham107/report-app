@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { CardPrintingModule } from './card-printing/card-printing.module';
 
 const routes: Routes = [
   {

@@ -4,6 +4,7 @@ import { CardType } from 'src/app/core/models/constants';
 import { Page } from 'src/app/core/models/page';
 import { CardPrintingService } from 'src/app/core/services/card-printing.service';
 import { Subscription } from 'rxjs';
+import { paging } from 'src/app/core/utils/paging';
 
 @Component({
   selector: 'app-card',
@@ -11,10 +12,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit, OnDestroy {
-  public enum: typeof CardType = CardType;
-  public recordsPerPage: number = 5;
-  public totalPages: number = 0;
-
   // public data: Member[] = [
   //   {
   //     id: 1,
@@ -23,7 +20,7 @@ export class CardComponent implements OnInit, OnDestroy {
   //     registerCode: 'ATN-0001',
   //     organzationStuctureName: 'CTN TP.HCM',
   //     avatarPath:
-  //       'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/279834538_789486402022850_1764428629689475795_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=LAU5WJY1dzgAX_6k-sU&_nc_ht=scontent.fsgn5-11.fna&oh=00_AfA6405k97f5WGw5sZRdpsvrjenqU7oyUDLF_AOK4eNdeg&oe=637A0348',
+  //       '../../assets/avatar/PhamHoangDu_DongKhaNhan.jpg',
   //     departmentCode: 'ATN',
   //     positionType: 2,
   //   },
@@ -250,6 +247,8 @@ export class CardComponent implements OnInit, OnDestroy {
   //   },
   // ];
 
+  public enum: typeof CardType = CardType;
+  public recordsPerPage: number = 5;
   public pages: Page[] = [];
   public cards: Member[] = [];
   private subCards = new Subscription();
@@ -263,39 +262,11 @@ export class CardComponent implements OnInit, OnDestroy {
   public getCardsPrinting(){
     this.cardPritingService.getCardsPrinting().subscribe((data) => {
       this.cards.push(...data);
-      this.paging(this.cards);
+
+      const pagingResult = paging(this.cards, this.recordsPerPage);
+
+      this.pages.push(...pagingResult);
     });
-  }
-
-  public paging(cards: Member[]) {
-    this.totalPages = this.getTotalPages(this.cards, this.recordsPerPage);
-
-    for (let pageNo = 0; pageNo < this.totalPages; pageNo++) {
-      console.log('page', pageNo);
-      let range: Member[] = this.getRecordsPerPage(pageNo, cards);
-      
-      this.pages.push({ pageNo: pageNo + 1, pageContent: [...range] });
-    }
-  }
-
-  public getRecordsPerPage(page: number = 0, cards: Member[]): Member[] {
-    let range: Member[] = [];
-    let startIndex: number = this.recordsPerPage * page;
-    let endIndex: number = startIndex + this.recordsPerPage;
-    // console.log('start', startIndex);
-    // console.log('end', endIndex);
-
-    for (let index = startIndex; index < endIndex; index++) {
-      if (cards[index]) {
-        range.push(cards[index]);
-      }
-    }
-
-    return range;
-  }
-
-  public getTotalPages(records: any[] = [], recordsPerPage: number = 1): number {
-    return Math.ceil(records.length / recordsPerPage);
   }
 
   ngOnDestroy() {
