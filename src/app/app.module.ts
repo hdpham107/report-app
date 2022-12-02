@@ -16,7 +16,7 @@ import { CardPrintingModule } from './card-printing/card-printing.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CardPrintingModule
+    CardPrintingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

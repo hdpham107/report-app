@@ -253,6 +253,8 @@ export class CardComponent implements OnInit, OnDestroy {
   public cards: Member[] = [];
   private subCards = new Subscription();
 
+  public URL_PATH: string = 'https://dangkydaile.ctnpq.com/register-info/';
+  
   public constructor(private cardPritingService: CardPrintingService) {}
 
   public ngOnInit(): void {
@@ -263,9 +265,17 @@ export class CardComponent implements OnInit, OnDestroy {
     this.cardPritingService.getCardsPrinting().subscribe((data) => {
       this.cards.push(...data);
 
+      this.addQRCodeLink(this.cards);
+
       const pagingResult = paging(this.cards, this.recordsPerPage);
 
       this.pages.push(...pagingResult);
+    });
+  }
+
+  public addQRCodeLink(cards: Member[]){
+    cards.forEach(member => {
+      member.qrCodeLink = this.URL_PATH + member.id;
     });
   }
 

@@ -126,6 +126,11 @@
     <span class="card__organzationStucture">{{
       item.organzationStuctureName
     }}</span>
+
+    <div class="card__qrcode">
+      <qrcode [width]="90" qrdata={{item.qrCodeLink}} [errorCorrectionLevel]="'H'"></qrcode>
+    </div>
   </div>
+  
   <div class="no">{{page.pageNo}}</div>
 </div>

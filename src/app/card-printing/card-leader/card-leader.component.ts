@@ -22,7 +22,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: '',
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: '',
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: 'a',
     },
     {
       id: 4,
@@ -58,7 +58,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: 'a',
     },
     {
       id: 5,
@@ -70,7 +70,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: 'a',
     },
     {
       id: 6,
@@ -82,7 +82,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: 'a',
     },
     {
       id: 7,
@@ -94,7 +94,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: 'a',
     },
     {
       id: 8,
@@ -106,7 +106,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: 'a',
     },
     {
       id: 9,
@@ -118,7 +118,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: 'a',
     },
     {
       id: 10,
@@ -130,7 +130,7 @@ export class CardLeaderComponent implements OnInit {
         '../../assets/avatar/DangVanHoa_NghiemKhaiTue.jpg',
       departmentCode: 'TT',
       positionType: 1,
-      qrCode: 'a',
+      qrCodeLink: 'a',
     },
   ];
 

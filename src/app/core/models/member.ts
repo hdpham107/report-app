@@ -7,5 +7,5 @@ export interface Member {
     avatarPath: string; // link hình thẻ: https://ctnpq.com/avatar/template.jpg
     departmentCode: string; // mã ban: HD1, HD2, BV, HDTN,...
     positionType: number; // chức vụ trong ban: Trưởng ban, Thành viên,...
-    qrCode: string; // mã QR
+    qrCodeLink: string; // mã QR
 }
